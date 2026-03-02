@@ -1,0 +1,82 @@
+version: 2
+
+title: WVS Happiness Prediction Challenge
+description: >
+  Predict individual happiness levels (A008) using World Values Survey data.
+  The task is ordinal classification evaluated with Quadratic Weighted Kappa (QWK).
+
+image: logo.png
+docker_image: codalab/codalab-legacy:py37
+registration_auto_approve: false
+
+terms: pages/terms.md
+
+pages:
+  - title: Participation
+    file: pages/participate.md
+  - title: Data Description
+    file: pages/seed.md
+  - title: Timeline
+    file: pages/timeline.md
+
+tasks:
+  - index: 0
+    name: Development Task
+    description: >
+      Train on WVS survey data and predict happiness levels (A008).
+      Evaluation is based on Quadratic Weighted Kappa (QWK).
+    ingestion_program: ingestion_program.zip
+    scoring_program: scoring_program.zip
+    input_data: input_data.zip
+    reference_data: reference_data.zip
+
+solutions:
+  - index: 0
+    path: solution.zip
+    tasks:
+      - 0
+
+phases:
+  - index: 0
+    name: Development Phase
+    description: Tune your models on the training data and evaluate on public test data.
+    start: 2025-10-07
+    end: 2026-03-31
+    tasks:
+      - 0
+
+leaderboards:
+  - title: Results
+    key: main
+    columns:
+      - title: Public QWK
+        key: test_public_qwk
+        index: 0
+        sorting: desc
+
+      - title: Private QWK
+        key: test_private_qwk
+        index: 1
+        sorting: desc
+        hidden: true
+
+      - title: Public MAE
+        key: test_public_mae
+        index: 2
+        sorting: asc
+
+      - title: Private MAE
+        key: test_private_mae
+        index: 3
+        sorting: asc
+        hidden: true
+
+      - title: Train Time (s)
+        key: train_time
+        index: 4
+        sorting: asc
+
+      - title: Test Time (s)
+        key: test_time
+        index: 5
+        sorting: asc
