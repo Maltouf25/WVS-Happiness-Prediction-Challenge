@@ -1,44 +1,51 @@
-# Predicting Individual Happiness from the World Values Survey
+# WVS Happiness Prediction Challenge
 
-This repository contains the code and configuration for a Codabench machine learning challenge based on the World Values Survey (WVS).
+This repository contains the code and resources for the **WVS Happiness Prediction Challenge**, a machine learning competition hosted on Codabench.
 
-The objective of the challenge is to predict the self-reported happiness score of individuals using large-scale cross-national survey data.
+Competition link:  
+https://www.codabench.org/competitions/14351
 
----
+## Overview
 
-## 🌍 Dataset
+The goal of this challenge is to predict the **self-reported happiness score of individuals** using data from the **World Values Survey (WVS)**.
 
-The data is derived from:
+Participants build machine learning models that use demographic, social, and cultural survey responses to estimate the happiness level of each respondent.
 
-World Values Survey (WVS) Time-Series Dataset (1981–2022)  
-Version V3.0  
+## Dataset
+
+The data comes from the **World Values Survey (WVS) Time-Series Dataset (1981–2022), Version V3.0**.
 
 Official source:  
 https://www.worldvaluessurvey.org/WVSDocumentationWVL.jsp
 
-The WVS dataset combines seven waves of surveys conducted between 1981 and 2022 across multiple countries.
+Key characteristics of the dataset:
 
-Important characteristics:
-
-- Repeated cross-sectional dataset (not panel data)
-- Each row represents a different individual
-- Nationally representative samples per wave
-- Special missing codes (-1, -2, -4, -5) must be handled carefully
+- International survey covering multiple countries and waves
+- Each row represents one individual respondent
+- Contains demographic, socioeconomic, and value-based survey variables
+- Includes special missing codes such as `-1`, `-2`, `-4`, and `-5`
 
 ⚠️ The original dataset cannot be redistributed.  
-Please download it directly from the official WVS website.
+Please download it from the official WVS website.
 
----
+## Task
 
-## 🎯 Task
+Participants must train a model to predict the **happiness score (A008)** of individuals.
 
-The goal is to predict the individual's happiness score (ordinal variable) using:
+The competition focuses mainly on **feature engineering and preprocessing** of high-dimensional survey data.
 
-- Demographic variables  
-- Socioeconomic indicators  
-- Cultural and political attitudes  
-- Value-based survey responses  
+## Evaluation
 
-This challenge is primarily a **feature engineering task**, as most raw columns are intentionally kept to allow creative preprocessing and representation learning.
+Submissions are evaluated using:
 
----
+- **Quadratic Weighted Kappa (QWK)** — primary ranking metric  
+- **Mean Absolute Error (MAE)** — complementary metric
+
+The public leaderboard is computed on a public test set, while the final ranking uses a hidden private test set.
+
+## Repository Contents
+
+- `ingestion_program/` — ingestion pipeline used by Codabench  
+- `scoring_program/` — evaluation code  
+- `Starting_kit.ipynb` — starter notebook for participants  
+- `competition.yaml` — competition configuration
