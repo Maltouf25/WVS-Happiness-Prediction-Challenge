@@ -6,18 +6,19 @@ description: >
   The task is ordinal classification evaluated with Quadratic Weighted Kappa (QWK).
 
 image: logo.png
-docker_image: codalab/codalab-legacy:py37
+docker_image: codalab/codalab-legacy:py39
 registration_auto_approve: false
+max_submissions_per_day: 100
 
 terms: pages/terms.md
 
 pages:
-  - title: Participation
-    file: pages/participate.md
+  - title: introduction
+    file: pages/introduction.md
   - title: Data Description
-    file: pages/seed.md
-  - title: Timeline
-    file: pages/timeline.md
+    file: pages/data.md
+  - title: Evaluation
+    file: pages/evaluation.md
 
 tasks:
   - index: 0
@@ -39,9 +40,21 @@ solutions:
 phases:
   - index: 0
     name: Development Phase
-    description: Tune your models on the training data and evaluate on public test data.
-    start: 2025-10-07
-    end: 2026-03-31
+    description: >
+      Tune your models on the training data and evaluate on the public leaderboard.
+    start: 2026-03-01
+    end: 2026-05-01
+    max_submissions_per_day: 100
+    tasks:
+      - 0
+
+  - index: 1
+    name: Final Phase
+    description: >
+      Final evaluation phase. The final ranking is based on the private test set.
+    start: 2026-05-02
+    end: 2026-05-15
+    max_submissions_per_day: 100
     tasks:
       - 0
 

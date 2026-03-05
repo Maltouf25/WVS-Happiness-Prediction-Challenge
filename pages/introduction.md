@@ -1,5 +1,5 @@
 # Predicting Individual Happiness from the World Values Survey
-
+Link for the starting kit : https://github.com/Maltouf25/WVS-Happiness-Prediction-Challenge/blob/main/Starting_kit.ipynb
 ## Overview
 
 This challenge focuses on predicting the **self-reported happiness score** of individuals using data from the World Values Survey (WVS).

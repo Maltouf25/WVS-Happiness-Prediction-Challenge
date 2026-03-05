@@ -9,7 +9,7 @@ Because happiness is an **ordinal variable**, evaluation must reflect ordered pr
 
 ---
 
-## 1️⃣ Quadratic Weighted Kappa (QWK)
+## Quadratic Weighted Kappa (QWK)
 
 Quadratic Weighted Kappa measures:
 
@@ -33,7 +33,7 @@ This is the **primary ranking metric**.
 
 ---
 
-## 2️⃣ Mean Absolute Error (MAE)
+## Mean Absolute Error (MAE)
 
 MAE measures:
 
